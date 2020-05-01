@@ -28,9 +28,9 @@ def leapyear():
     #checkt of de invoer een schrikkeljaar is
     #een jaar is een schrikkeljaar als het deelbaar is door 4, tenzij het een eeuwwisseling is want dan moet het deelbaar zijn door 400
     if input_year%4 == 0 and input_year%100 != 0 or input_year%100==0 and input_year%400 == 0:
-        print('{input year} is een schrikkeljaar.'.format(input_year))
+        print('{} is een schrikkeljaar.'.format(input_year))
     else:
-        print('{input year} is geen schrikkeljaar.'.format(input_year))
+        print('{} is geen schrikkeljaar.'.format(input_year))
         
     #loopt terug vanaf de invoer om het vorige schrikkeljaar te vinden
     for test_year in range(input_year-1, input_year-8, -1):
@@ -38,13 +38,13 @@ def leapyear():
             print('Er zijn geen kleinere schikkeeljaren volgens de Gregoriaanse kalender')
             break
         if test_year%4 == 0 and test_year%100 != 0 or test_year%100==0 and test_year%400 == 0:
-            print('{previous leap year} is het vorige schrikkeljaar.'.format(test_year))
+            print('{} is het vorige schrikkeljaar.'.format(test_year))
             break
     
     #loopt vooruit vanaf de invoer om het volgende schrikkeljaar te vinden
     for test_year in range(input_year+1,input_year+8):
         if test_year%4 == 0 and test_year%100 != 0 or test_year%100==0 and test_year%400 == 0:
-            print('{next leap year} is het eerstvolgende schrikkeljaar.'.format(test_year))
+            print('{} is het eerstvolgende schrikkeljaar.'.format(test_year))
             break
 
     #zorgt ervoor dat de gebruiker op enter kan drukken om terug naar hoofdmenu te gaan

@@ -51,7 +51,7 @@ def spotify():
 
         for c,x in enumerate(cursor,1):
         
-            print('{id}.{titel}-{artiest}'.format(c,x[0],x[1]))
+            print('{}.{}-{}'.format(c,x[0],x[1]))
             song_results.append(x)
 
         #maakt een lijst met de mogelijke opties zodat er niet een niet bestaande optie wordt gekozen

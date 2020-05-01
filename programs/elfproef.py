@@ -88,7 +88,6 @@ def elfproef():
             #voert elfproef uit op de tijdelijke BSN, als het er niet aan voldoet herhaalt de loop
             #en als het wel voldoet wordt het geldige BSN geprint
             
-            #elfproef_proof = sum([y*z for y,z in zip([*range(9,1,-1)]+[-1], [int(x) for x in test_BSN_string])]) % 11 == 0
             
             if elfproef_check(test_BSN_string): 
                 print(test_BSN_string+' is het eerst volgende geldige BSN')

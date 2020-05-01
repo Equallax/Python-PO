@@ -39,9 +39,9 @@ def primenumber():
 
     #checkt of de invoer een priemgetal is door het door de PrimeCheck functie heen te laten gaan
     if PrimeCheck(input_number): 
-        print('{input number} is een priemgetal'.format(input_number))
+        print('{} is een priemgetal'.format(input_number))
     else: 
-        print('{input number} is geen priemgetal'.format(input_number))
+        print('{} is geen priemgetal'.format(input_number))
     
     #loopt terug vanaf de invoer om het vorige priemgetal te vinden door bij elke iteratie de verlaagde waarde door de PrimeCheck functie te laten gaan
     temp = input_number
@@ -53,7 +53,7 @@ def primenumber():
             break 
             
         if temp==2 or PrimeCheck(temp):
-            print('{previous prime} is het vorige priemgetal'.format(temp))
+            print('{} is het vorige priemgetal'.format(temp))
             break
     
     #loopt verder vanaf de invoer om het volgende priemgetal te vinden door bij elke iteratie de verhoogde waarde door de PrimeCheck functie te laten gaan
@@ -63,7 +63,7 @@ def primenumber():
         
         if temp<=0: break 
         if temp==2 or PrimeCheck(temp):
-            print('{next prime} is het volgende priemgetal'.format(temp))
+            print('{} is het volgende priemgetal'.format(temp))
             break
         
     #zorgt ervoor dat de gebruiker terug kan gaan naar het hoofdmenu door op enter te drukken
