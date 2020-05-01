@@ -27,7 +27,7 @@ jobs:
         pip install matplotlib
         pip install pytest
         pip install wheel
-        pip install mysql
+        pip install mysql-connector
 
 
     - name: Lint with flake8
