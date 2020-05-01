@@ -80,7 +80,7 @@ def length_check(input_function, desired_length , function_args=None):
     ARG BESCHRIJVING:
         input_function:     functie waar de check op moet worden uitgevoerd
         desired_length:     de gewenste lengte van de waarde die de input_function returnt
-        funtion_args:       OPTIONEEL: Variabels die de input_function gebruikt 
+        funtion_args:       OPTIONEEL: Variabelen die de input_function gebruikt 
         
     '''
 
@@ -95,7 +95,7 @@ def length_check(input_function, desired_length , function_args=None):
     
 
 def str_list(input_list):
-    '''Zet een list met allerlij type variabels om in een list die bestaat uit strings. '''
+    '''Zet een list met allerlei type variabelen om in een list die bestaat uit strings. '''
     return [str(x) for x in input_list]
 
 

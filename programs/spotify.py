@@ -18,7 +18,7 @@ def spotify():
 
     '''
     Functie die ervoor zorgt dat het programma nummers kan ophalen uit een SQL-database, gehost door remotemysql.com.
-    De gebruiker kan desbestreffende nummers daarna afspelen in de standaart webbrowser op het systeem.
+    De gebruiker kan desbetreffende nummers daarna afspelen in de standaard webbrowser op het systeem.
     '''
     
     #in een loop zodat je nog een liedje kan zoeken als je er al eentje hebt afgespeeld
@@ -33,7 +33,7 @@ def spotify():
           database='zZ591I7Nne'
         )
 
-        #cursor is een functie van de mysql module die ervoor zorgt dat je met python querys kan uitvoeren
+        #cursor is een functie van de mysql module die ervoor zorgt dat je met python query's kan uitvoeren
         cursor = mydb.cursor()
         search = input('Type een zoekterm. Laat leeg voor een volledige lijst. Type \'terug\' om terug te gaan:\n')
         title()
@@ -42,7 +42,7 @@ def spotify():
             break
 
         print('Liedjes:\n')
-        #haalt de gerelateerde liedjes op uit de database mbv een query
+        #haalt de gerelateerde liedjes op uit de database m.b.v. een query
         cursor.execute('SELECT songs.title, group_concat(artists.name SEPARATOR \', \') FROM ((main INNER JOIN artists ON main.artist_id = artists.artist_id) INNER JOIN songs ON main.song_id = songs.song_id) WHERE songs.title like %s or artists.name like %s GROUP BY songs.title',('%'+search+'%','%'+search+'%'))
 
         #toont de resultaten van de query en maakt er een list van

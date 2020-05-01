@@ -37,7 +37,7 @@ def menu():
     print('7. Sluiten\n')
     #haalt de user input op als int d.m.v. de input check module
     choice = int(lib.dummy_list(lib.str_list(range(1,aantal_opties+1)),'Kies een optie:'))
-    #zorgt ervoor dat het gekozen programma wordt geopent
+    #zorgt ervoor dat het gekozen programma wordt geopend
     if choice == 1:
         prime.primenumber()
     elif choice == 2:

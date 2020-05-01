@@ -37,7 +37,7 @@ def primenumber():
     
     input_number = lib.dummy_numeric(True, 'Voor je natuurlijke getal hier in:', negative_allowed=False)
 
-    #checkt of de invoer een priemgetal is door het door de PrimeCheck funtie heen te laten gaan
+    #checkt of de invoer een priemgetal is door het door de PrimeCheck functie heen te laten gaan
     if PrimeCheck(input_number): 
         print('{input number} is een priemgetal'.format(input_number))
     else: 

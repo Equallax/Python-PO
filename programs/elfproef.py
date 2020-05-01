@@ -13,16 +13,16 @@ title = lib.Title.set_title('Elf Proef')
 def elfproef_check(BSN): 
 
     '''
-    Functie die checkt of een gegeven 9 cijferig nummer voldoet aan de elfproef en dus een geldig BSN kan zijn.
+    Functie die checkt of een gegeven 9-cijferig nummer voldoet aan de elfproef en dus een geldig BSN kan zijn.
     Geeft als returnwaarde een boolean.
     STAPGEWIJZE BESCHRIJVING:
     
-    1. Er wordt een list gemaakt van 9 tot en met 1. De laaste waarde hier hierbij als uitzondering negatief.
+    1. Er wordt een list gemaakt van 9 tot en met 1. De laatste waarde is hierbij als uitzondering negatief.
     2. Invoer "BSN" wordt omgezet in een list.
-    3. Beide lists worden samengevoegd, waardoor er één nieuwe list wordt gevord. Variabls met dezelfde index vormen tuples.
-    4. Er wordt met een list comprehention weer een niewe array gemaakt die bestaan uit het product van de individuele tuples.
+    3. Beide lists worden samengevoegd, waardoor er één nieuwe list wordt gevormd. Variabelen met dezelfde index vormen tuples.
+    4. Er wordt met een list comprehension weer een nieuwe array gemaakt die bestaan uit het product van de individuele tuples.
     5. De som van alle producten in de list wordt genomen.
-    6. Als de modulus van de som gedeelt door 11 gelijk is aan nul is de returnwaarde True, zo niet is de returnwaarde False
+    6. Als de modulus van de som gedeeld door 11 gelijk is aan nul, is de returnwaarde True, zo niet is de returnwaarde False
     
     '''
     
@@ -58,7 +58,7 @@ def BSN_GEN(start_BSN):
 
 def elfproef():
 
-    ''' Dit is de hoodfunctie van dit bestand. Het zorgt ervoor dat de gebruiker een BSN  kan laten checken.
+    ''' Dit is de hoofdfunctie van dit bestand. Het zorgt ervoor dat de gebruiker een BSN  kan laten checken.
     Foute invoer waardes worden afgehandeld. Als het BSN niet aan de elfproef voldoet word het eerstvolgende BSN nummer
     dat wel aan de proef voldoet getoond 
     
@@ -81,7 +81,7 @@ def elfproef():
         for test_BSN in BSN_GEN(int(input_BSN)):
         
             test_BSN_string = str(test_BSN)
-            #voegt een 0 toe aan het begin van de BSN als deze 8 karakters lang is ipv 9
+            #voegt een 0 toe aan het begin van de BSN als deze 8 karakters lang is i.p.v. 9
             if len(test_BSN_string) == 8:
                 test_BSN_string = '0'+test_BSN_string
 
