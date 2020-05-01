@@ -34,5 +34,4 @@ jobs:
       run: |
         pip install wheel
         pip install pytest
-        export PYTHONPATH=src
         pytest
