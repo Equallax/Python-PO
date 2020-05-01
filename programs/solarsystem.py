@@ -43,7 +43,7 @@ if realistic['real_G'] is True:
     def gravity(x, y):
     
         '''
-        Functie die ervoor zorgt dat gravitatiekracht tussen helemellichamen kan worden berekent
+        Functie die ervoor zorgt dat gravitatiekracht tussen hemellichamen kan worden berekent
         Dat gebeurt hier met de echte gravitatieconstante
         '''
         
@@ -57,12 +57,12 @@ if realistic['real_G'] is True:
 
         return force_vec
 else:
-    #gebruikt 1 inplaats van G
+    #gebruikt 1 in plaats van G
     def gravity(x, y):
     
         '''
-        Functie die ervoor zorgt dat gravitatiekracht tussen helemellichamen kan worden berekent
-        Dat gebeurt hier met het getal 1 inplaats van de echte de echte gravitatieconstante
+        Functie die ervoor zorgt dat gravitatiekracht tussen hemellichamen kan worden berekent
+        Dat gebeurt hier met het getal 1 in plaats van de echte de echte gravitatieconstante
         '''
         
         r_vec = x.pos - y.pos
@@ -127,7 +127,7 @@ def sim(scatter_plot):
             current_body.y_path = np.append(current_body.y_path, current_body.pos[1])
             current_body.z_path = np.append(current_body.z_path, current_body.pos[2])
         t += dt
-    #gebruikt versimpelde berekeningen waaarin de planeten alleen met de orbiting bodies rekening houden
+    #gebruikt versimpelde berekeningen waarin de planeten alleen met de orbiting bodies rekening houden
     else:
         for current_body in bodies:
             forces = np.zeros(3, dtype=np.float64)
