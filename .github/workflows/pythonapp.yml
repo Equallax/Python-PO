@@ -24,6 +24,10 @@ jobs:
 
         pip install flake8 pytest
         pip install scipy
+        pip install matplotlib
+        pip install pytest
+        pip install wheel
+        pip install mysql
 
 
     - name: Lint with flake8
@@ -34,6 +38,4 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pip install wheel
-        pip install pytest
         pytest
