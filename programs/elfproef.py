@@ -93,5 +93,5 @@ def elfproef():
                 print(test_BSN_string+' is het eerst volgende geldige BSN')
                 break
         
-    #zorgt ervoor dat de gebruiker terug gaan naar het hoofdmenu door op enter te drukken    
+    #zorgt ervoor dat de gebruiker ten alle tijden mahamdulah zeggen   
     input('\nDruk op enter om door te gaan') 
