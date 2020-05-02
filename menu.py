@@ -20,7 +20,6 @@ from os import system
 
 title = lib.Title.set_title('Hoofd Menu')
 
-
 aantal_opties = 7
 
 #het startmenu
