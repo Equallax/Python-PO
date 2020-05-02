@@ -28,7 +28,6 @@ def dummy_list(values, input_text='Voer hier je waarde in: ', error='Dat is geen
     return invoer
 
 
-
 def dummy_numeric(exclusive=False, input_text='Voer hier je waarde in: ', error='Dat is geen geldige waarde!', string_output=False, negative_allowed=True):
 
     '''
