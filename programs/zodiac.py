@@ -12,6 +12,10 @@ title = lib.Title.set_title('Dieren Ring')
 
 def zodiac():
 
+    ```
+    Deze functie controleert bij welk sterrenbeeld de invoer hoort door te kijken of de datum binnen bepaalde waardes valt
+    ```
+    
     title()
     while True:  
         while True:
