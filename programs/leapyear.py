@@ -12,6 +12,11 @@ title = lib.Title.set_title('Schrikkeljaar')
 
 def leapyear():
 
+    '''
+    Deze functie controleerd of een invoer een schrikkeljaar is of niet door te checken of het deelbaar is door 4, is dit het geval dan is het getal een schrikkeljaar.
+    Is het getal deelbaar door 100 dan moet het deelbaar zijn door 400 om een schrikkeljaar te zijn
+    Omdat in de Gregoriaanse calender pas schrikkeljaren zijn vanaf 1582 gaat het programma ook niet verder terug dan 1582.
+    '''
 
     title()
     
