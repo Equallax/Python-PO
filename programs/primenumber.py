@@ -13,7 +13,10 @@ title = lib.Title.set_title('Priem Getal')
 
 def primenumber():
 
-
+    '''
+    Deze functie controleert of een getal een priemgetal is door te checken of het deelbaar is door zichzelf of door 1, als dit het geval is is het een priemgetal.
+    '''
+    
     title()
  
     #checkt of een getal een priemgetal
