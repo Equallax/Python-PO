@@ -14,6 +14,11 @@ def zodiac():
 
     ```
     Deze functie controleert bij welk sterrenbeeld de invoer hoort door te kijken of de datum binnen bepaalde waardes valt
+    
+        1. Invoer van gebruiker halen als een list
+        2. De list omzetten in losse invoerwaardes voor dag, maand en jaar
+        3. Checken bij welk sterrebeeld de invoer hoort
+        
     ```
     
     title()
