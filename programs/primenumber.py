@@ -15,6 +15,9 @@ def primenumber():
 
     '''
     Deze functie controleert of een getal een priemgetal is door te checken of het deelbaar is door zichzelf of door 1, als dit het geval is is het een priemgetal.
+        1. Invoer van de gebruiker halen
+        2. Controleert of de invoer een priemgetal is en print dit
+        3. Vindt het vorige en volgende priemgetal en print deze
     '''
     
     title()
