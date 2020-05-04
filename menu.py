@@ -2,7 +2,7 @@
 programmanaam:     menu
 auteur:            Dariush Mirkarimi & Milan Hak
 datum:             28-4-2020
-functionaliteit:   Een text-based interface waar de gebruiker het geweste programma mee kan openen
+functionaliteit:   Een text-based interface waar de gebruiker het gewenste programma mee kan openen
 '''
 
 # importeert alle benodigde modules
