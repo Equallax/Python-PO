@@ -18,7 +18,7 @@ import programs.spotify as spotify
 import matplotlib.pyplot as plt
 from os import system
 
-title = lib.Title.set_title('Hoofd Menu')
+title = lib.title_show('Hoofd Menu')
 
 aantal_opties = 7
 
