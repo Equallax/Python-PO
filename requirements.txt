@@ -1,4 +1,8 @@
+#De volgende modules zijn nodig om het programma te kunnen gebruiken
+
 matplotlib
 numpy
 scipy
 mysql-connector-python
+
+#In cmd: py -m pip install matplotlib numpy scipy mysql-connector-python
