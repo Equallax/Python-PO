@@ -108,7 +108,7 @@ def title_show(name):
     
     def show():
         line_one = '---------[{0}]---------'.format(name)
-        system('cmd /c "cls"')
+        clear()
             
         print(line_one)
         print('‾'*len(line_one))
