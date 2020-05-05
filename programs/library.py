@@ -102,20 +102,16 @@ def clear():
     '''Maakt het console leeg voor het volgende scherm. '''
     system('cmd /c "cls"')
 
-
-class Title:
+    
+def title_show(name):
     '''Zorgt ervoor dat de titel van het huidige programma mooi in beeld komt maar niet voordat het, het console leegmaakt. '''
-    def __init__(self, name):
-        self.name = name
-        
-    def print(self):
-        line_one = '---------['+self.name+']---------'
-        clear()
+    
+    def show():
+        line_one = '---------[{0}]---------'.format(name)
+        system('cmd /c "cls"')
+            
         print(line_one)
         print('‾'*len(line_one))
-    
-    @staticmethod
-    def set_title(name):
-        text = Title(name)
-        return text.print
+     
+    return show
         
