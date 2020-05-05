@@ -101,8 +101,6 @@ def sim(scatter_plot):
     '''
     Deze functie simuleert de beweging van de hemellichamen. 
     Dat gebeurt behulp van de simulatie functie die ervoor zorgt dat krachten tussen de hemellichamen worden berekent.
-    
-    Deze 
     '''
 
 
