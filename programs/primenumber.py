@@ -9,7 +9,7 @@ import math
 from os import system
 import programs.library as lib
 
-title = lib.Title.set_title('Priem Getal')
+title = lib.title_show('Priem Getal')
 
 def primenumber():
 
