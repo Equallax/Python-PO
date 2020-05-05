@@ -8,7 +8,7 @@ functionaliteit:   Neemt als invoer een datum en weergeeft het bijbehorende ster
 import datetime
 import programs.library as lib
 
-title = lib.Title.set_title('Dieren Ring')
+title = lib.title_show('Dieren Ring')
 
 def zodiac():
 
