@@ -8,7 +8,7 @@ functionaliteit:   Gebruikers kunnen checken of jaartallen behoren tot een schri
 from os import system
 import programs.library as lib
 
-title = lib.Title.set_title('Schrikkeljaar')
+title = lib.title_show('Schrikkeljaar')
 
 def leapyear():
 
