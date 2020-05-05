@@ -7,7 +7,7 @@ functionaliteit:   Gebruikers kunnen checken of een BSN geldig kan zijn. Ook laa
 
 import programs.library as lib
 
-title = lib.Title.set_title('Elf Proef')
+title = lib.title_show('Elf Proef')
 
 #checkt of de invoer voldoet aan de elfproef
 def elfproef_check(BSN): 
