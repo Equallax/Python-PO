@@ -1,4 +1,4 @@
 matplotlib
 numpy
 scipy
-mysql-connector
+mysql-connector-python
