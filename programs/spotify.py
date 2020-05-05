@@ -10,7 +10,7 @@ import programs.library as lib
 import webbrowser
 
 
-title = lib.Title.set_title('Spotify')
+title = lib.title_show('Spotify')
 
 
 def spotify():
