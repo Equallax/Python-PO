@@ -1,2 +1,9 @@
 
 *.pyc
+programs/__pycache__/zodiac.cpython-37.pyc
+programs/__pycache__/spotify.cpython-37.pyc
+programs/__pycache__/solarsystem.cpython-37.pyc
+programs/__pycache__/primenumber.cpython-37.pyc
+programs/__pycache__/library.cpython-37.pyc
+programs/__pycache__/leapyear.cpython-37.pyc
+programs/__pycache__/elfproef.cpython-37.pyc
