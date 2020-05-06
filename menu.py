@@ -44,7 +44,7 @@ def menu():
     elif choice == 3:
         zodiac.zodiac()
     elif choice == 4:
-        plt.show()
+        solarsystem.solarsystem()
     elif choice == 5:
         elfproef.elfproef()
     elif choice == 6:
