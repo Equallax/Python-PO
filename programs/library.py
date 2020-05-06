@@ -89,7 +89,7 @@ def length_check(input_function, desired_length , function_args=None):
                 return user_input
                 break;
             else:
-                print('De invoer moet bestaan uit {required length} cijfer, maar {given length} waren gegeven\n'.format(desired_length, len(str(user_input))))
+                print('De invoer moet bestaan uit {} cijfer, maar {} waren gegeven\n'.format(desired_length, len(str(user_input))))
     
     
 
@@ -107,7 +107,7 @@ def title_show(name):
     '''Zorgt ervoor dat de titel van het huidige programma mooi in beeld komt maar niet voordat het, het console leegmaakt. '''
     
     def show():
-        line_one = '---------[{0}]---------'.format(name)
+        line_one = '---------[{}]---------'.format(name)
         clear()
             
         print(line_one)
