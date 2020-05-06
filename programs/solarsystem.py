@@ -13,7 +13,7 @@ from matplotlib.animation import FuncAnimation
 
 realistic = {
     'real_G':  False,
-    'real_calculations': True
+    'real_calculations': False
 }
 
 #Een class word gemaakt. De hemellichamen worden allemaal object van deze class.
@@ -122,7 +122,6 @@ def sim(scatter_plot):
                 
         for i, current_body in enumerate(bodies): 
             
-            
             current_body.force = force_list[i]
             current_body.momentum += current_body.force * dt
             current_body.pos += current_body.momentum / current_body.mass * dt
@@ -135,6 +134,7 @@ def sim(scatter_plot):
         t += dt
     #gebruikt versimpelde berekeningen waarin de planeten alleen met de orbiting bodies rekening houden
     else:
+        force_list = []
         for current_body in bodies:
             forces = np.zeros(3, dtype=np.float64)
 
@@ -142,8 +142,14 @@ def sim(scatter_plot):
             if current_body.orbiting is not None and current_body is not Sun:
                 for i in current_body.orbiting:
                     forces += gravity(current_body, i)
-
-                current_body.force = forces
+                    
+                force_list.append(forces)
+            else:
+                force_list.append((0,0,0))
+                
+        for i, current_body in enumerate(bodies):
+            if current_body.orbiting is not None and current_body is not Sun:
+                current_body.force = force_list[i]
                 current_body.momentum += current_body.force * dt
                 current_body.pos += current_body.momentum / current_body.mass * dt
 
@@ -162,12 +168,13 @@ def sim(scatter_plot):
 
     #zet de waardes van het stelsel in het plot
     for i in bodies:
+        ax.plot(i.x_path[-100::], i.y_path[-100::], i.z_path[-100::], color=i.colour, zorder=3.9, alpha=0.5)
         if i.colour is not None:
             ax.scatter(i.pos[0], i.pos[1], i.pos[2], s=i.radius, color=i.colour, zorder=2)
             ax.text(i.pos[0], i.pos[1], i.pos[2], s=i.name, zorder=10.,
                     verticalalignment='center_baseline', horizontalalignment='center', fontsize=8)
 
-        ax.plot(i.x_path, i.y_path, i.z_path, color=i.colour, zorder=3.9, alpha=0.5)
+        
 
     return scatter_plot
 
