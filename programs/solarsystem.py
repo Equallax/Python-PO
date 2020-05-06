@@ -13,7 +13,7 @@ from matplotlib.animation import FuncAnimation
 
 realistic = {
     'real_G':  False,
-    'real_calculations': False
+    'real_calculations': True
 }
 
 #Een class word gemaakt. De hemellichamen worden allemaal object van deze class.
@@ -108,6 +108,7 @@ def sim(scatter_plot):
     t = 0
     #gebruikt realistische berekeningen waarin alles met alles rekening houdt
     if realistic['real_calculations'] is True:
+        force_list = []
         for current_body in bodies:
             temp = bodies.copy()
             temp.pop(temp.index(current_body))
@@ -116,7 +117,13 @@ def sim(scatter_plot):
             for affecting_body in temp:
                 forces += gravity(current_body, affecting_body)
                 
-            current_body.force = forces
+            force_list.append(forces)
+                
+                
+        for i, current_body in enumerate(bodies): 
+            
+            
+            current_body.force = force_list[i]
             current_body.momentum += current_body.force * dt
             current_body.pos += current_body.momentum / current_body.mass * dt
             
@@ -124,6 +131,7 @@ def sim(scatter_plot):
             current_body.x_path = np.append(current_body.x_path, current_body.pos[0])
             current_body.y_path = np.append(current_body.y_path, current_body.pos[1])
             current_body.z_path = np.append(current_body.z_path, current_body.pos[2])
+            
         t += dt
     #gebruikt versimpelde berekeningen waarin de planeten alleen met de orbiting bodies rekening houden
     else:
