@@ -76,12 +76,17 @@ else:
         return force_vec
 
 #Hemellichamen als objecten van de CelestialBody class initialiseren
+#Hemellichamen als objecten van de CelestialBody class initialiseren
 Sun = CelestialBody('Sun', None, 1000, 2000, [0, 0, 0], [0, 0, 0], colour='C1')
 Earth = CelestialBody('Earth', [Sun], 200, 4.5, [1.3, 0, 0], [0, -100, 80], colour='C0')
 Moon = CelestialBody('Moon', [Sun, Earth], 5, 0.5, [1.38, 0, 0], [-1, -13.99291, 12], colour='purple')
-Mercurius = CelestialBody('Mercurius', [Sun], 20, 4.5, [0.7, 0, 0], [0, -225, 0], colour='red')
-Jupiter = CelestialBody('Jupiter', [Sun], 1000, 2000, [1.7, 0, 0], [19000, 15000, 225*250], colour='green')
-Saturnus = CelestialBody('Saturnus', [Sun], 20, 4.5, [0.7, 0, 0], [0, -225, 0], colour='red')
+Mercurius = CelestialBody('Mercurius', [Sun], 20, 4.5, [0.7, 0, 0], [0, -225, -30], colour='red')
+Venus = CelestialBody('Venus', [Sun], 150, 4.5, [1, 0, 0], [0, -200, 25], colour='blue')
+Jupiter = CelestialBody('Jupiter', [Sun], 400, 5, [1.7, 0, 0], [0, -150, 30], colour='green')
+Saturn = CelestialBody('Saturn', [Sun], 200, 4.5, [2.0, 0, 0], [0, -130, 0], colour='yellow')
+Mars = CelestialBody('Mars', [Sun], 100, 3.5, [1.1, 0, 0], [0, -150, 25], colour='red')
+Uranus = CelestialBody('Uranus', [Sun], 40, 4.7, [2.2, 0, 0], [0, -135, 0], colour='blue')
+Neptunus = CelestialBody('Neptunus', [Sun], 40, 4.6, [2.4, 0, 0], [0, -110, 0], colour='blue')
 
 #een list maken van de planeten
 bodies = [Sun, Earth, Moon, Mercurius, Jupiter]
