@@ -12,4 +12,6 @@ Het programma kan je onderverdelen in de volgende bestanden:
 - een spotify clone
 - een library voor veel gebruikte functies
 
+Als je dit programma installeert kan door setup.bat te runnen alle ontbrekende dependancies installeren.
+
 -Gemaakt door Milan en Dariush
