@@ -75,113 +75,115 @@ else:
 
         return force_vec
 
-#Hemellichamen als objecten van de CelestialBody class initialiseren
-#Hemellichamen als objecten van de CelestialBody class initialiseren
-Sun = CelestialBody('Sun', None, 1000, 2000, [0, 0, 0], [0, 0, 0], colour='C1')
-Earth = CelestialBody('Earth', [Sun], 200, 4.5, [1.3, 0, 0], [0, -100, 80], colour='C0')
-Moon = CelestialBody('Moon', [Sun, Earth], 5, 0.5, [1.38, 0, 0], [-1, -13.99291, 12], colour='purple')
-Mercurius = CelestialBody('Mercurius', [Sun], 20, 4.5, [0.7, 0, 0], [0, -225, -30], colour='red')
-Venus = CelestialBody('Venus', [Sun], 150, 4.5, [1, 0, 0], [0, -200, 25], colour='blue')
-Jupiter = CelestialBody('Jupiter', [Sun], 400, 5, [1.7, 0, 0], [0, -150, 30], colour='green')
-Saturn = CelestialBody('Saturn', [Sun], 200, 4.5, [2.0, 0, 0], [0, -130, 0], colour='yellow')
-Mars = CelestialBody('Mars', [Sun], 100, 3.5, [1.1, 0, 0], [0, -150, 25], colour='red')
-Uranus = CelestialBody('Uranus', [Sun], 40, 4.7, [2.2, 0, 0], [0, -135, 0], colour='blue')
-Neptunus = CelestialBody('Neptunus', [Sun], 40, 4.6, [2.4, 0, 0], [0, -110, 0], colour='blue')
+def solarsystem():
+    #Hemellichamen als objecten van de CelestialBody class initialiseren
+    #Hemellichamen als objecten van de CelestialBody class initialiseren
+    Sun = CelestialBody(            'Sun',      None, 400,     2000,    [0, 0, 0],      [0, 0, 0], colour='C1')
+    Mercury = CelestialBody(        'Mercury',  [Sun], 10,      4.5,    [0.5, 0, 0],    [0, -275, -30], colour='red')
+    Venus = CelestialBody(          'Venus',    [Sun], 75,     4.5,     [0.8, 0, 0],      [0, -200, 25], colour='blue')
+    Earth = CelestialBody(          'Earth',    [Sun], 100,     4.5,    [1.3, 0, 0],    [0, -165, 0], colour='C0')
+    Mars = CelestialBody(           'Mars',     [Sun], 100,     3.5,    [1.1, 0, 0],    [0, -150, 25], colour='red')
+    Jupiter = CelestialBody(        'Jupiter',  [Sun], 400,     5,      [1.7, 0, 0],    [0, -150, 30], colour='green')
+    Saturn = CelestialBody(         'Saturn',   [Sun], 200,     4.5,    [2.0, 0, 0],    [0, -130, 0], colour='yellow')
+    Uranus = CelestialBody(         'Uranus',   [Sun], 40,      4.7,    [2.2, 0, 0],    [0, -135, 0], colour='blue')
+    Neptune = CelestialBody(        'Neptune',  [Sun], 40,      4.6,    [2.4, 0, 0],    [0, -110, 0], colour='blue')
 
-#een list maken van de planeten
-bodies = [Sun, Earth, Moon, Mercurius, Jupiter]
+    #een list maken van de planeten
+    bodies = [Sun, Mercury, Venus, Earth, ]
+    #Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune
 
-#stelt het plot in om 3d te tonen
-fig = plt.figure()
+    #stelt het plot in om 3d te tonen
+    fig = plt.figure()
 
-ax = fig.add_subplot(111, projection='3d')
-ax.grid(True, linestyle='-', color='0.75')
-#initialiseert het plot met de positie van de aarde
-scat = plt.scatter(Earth.pos[0], Earth.pos[1], 0)
+    ax = fig.add_subplot(111, projection='3d')
+    ax.grid(True, linestyle='-', color='0.75')
+    #initialiseert het plot met de positie van de aarde
+    scat = plt.scatter(Earth.pos[0], Earth.pos[1], 0)
 
-#berekent de krachten op de planeten op een wijze vergelijkbaar met coach maar dan beter en in 3d
-#de simulatie functie 
-def sim(scatter_plot):
+    #berekent de krachten op de planeten op een wijze vergelijkbaar met coach maar dan beter en in 3d
+    #de simulatie functie 
+    def sim(scatter_plot):
 
-    '''
-    Deze functie simuleert de beweging van de hemellichamen. 
-    Dat gebeurt behulp van de simulatie functie die ervoor zorgt dat krachten tussen de hemellichamen worden berekent.
-    '''
+        '''
+        Deze functie simuleert de beweging van de hemellichamen. 
+        Dat gebeurt behulp van de simulatie functie die ervoor zorgt dat krachten tussen de hemellichamen worden berekent.
+        '''
 
 
-    dt = 0.001
-    t = 0
-    #gebruikt realistische berekeningen waarin alles met alles rekening houdt
-    if realistic['real_calculations'] is True:
-        force_list = []
-        for current_body in bodies:
-            temp = bodies.copy()
-            temp.pop(temp.index(current_body))
-            #past posities van hemellichamen aan op basis van de krachten die op hen werken
-            forces = np.zeros(3, dtype=np.float64)
-            for affecting_body in temp:
-                forces += gravity(current_body, affecting_body)
-                
-            force_list.append(forces)
-                
-                
-        for i, current_body in enumerate(bodies): 
-            
-            current_body.force = force_list[i]
-            current_body.momentum += current_body.force * dt
-            current_body.pos += current_body.momentum / current_body.mass * dt
-            
-            #past trails toe om de vorige posities te kunnen zien
-            current_body.x_path = np.append(current_body.x_path, current_body.pos[0])
-            current_body.y_path = np.append(current_body.y_path, current_body.pos[1])
-            current_body.z_path = np.append(current_body.z_path, current_body.pos[2])
-            
-        t += dt
-    #gebruikt versimpelde berekeningen waarin de planeten alleen met de orbiting bodies rekening houden
-    else:
-        force_list = []
-        for current_body in bodies:
-            forces = np.zeros(3, dtype=np.float64)
-
-            #past posities van hemellichamen aan op basis van de krachten die op hen werken
-            if current_body.orbiting is not None and current_body is not Sun:
-                for i in current_body.orbiting:
-                    forces += gravity(current_body, i)
+        dt = 0.001
+        t = 0
+        #gebruikt realistische berekeningen waarin alles met alles rekening houdt
+        if realistic['real_calculations'] is True:
+            force_list = []
+            for current_body in bodies:
+                temp = bodies.copy()
+                temp.pop(temp.index(current_body))
+                #past posities van hemellichamen aan op basis van de krachten die op hen werken
+                forces = np.zeros(3, dtype=np.float64)
+                for affecting_body in temp:
+                    forces += gravity(current_body, affecting_body)
                     
                 force_list.append(forces)
-            else:
-                force_list.append((0,0,0))
+                    
+                    
+            for i, current_body in enumerate(bodies): 
                 
-        for i, current_body in enumerate(bodies):
-            if current_body.orbiting is not None and current_body is not Sun:
                 current_body.force = force_list[i]
                 current_body.momentum += current_body.force * dt
                 current_body.pos += current_body.momentum / current_body.mass * dt
-
+                
                 #past trails toe om de vorige posities te kunnen zien
                 current_body.x_path = np.append(current_body.x_path, current_body.pos[0])
                 current_body.y_path = np.append(current_body.y_path, current_body.pos[1])
                 current_body.z_path = np.append(current_body.z_path, current_body.pos[2])
+                
+            t += dt
+        #gebruikt versimpelde berekeningen waarin de planeten alleen met de orbiting bodies rekening houden
+        else:
+            force_list = []
+            for current_body in bodies:
+                forces = np.zeros(3, dtype=np.float64)
 
-        t += dt
-    #stelt de grootte van het assenstelsel in
-    plt.cla()
-    ax.set_xlim(-2, 2)
-    ax.set_ylim(-2, 2)
-    ax.set_zlim(-2, 2)
-    ax.set_clip_on(False)
+                #past posities van hemellichamen aan op basis van de krachten die op hen werken
+                if current_body.orbiting is not None and current_body is not Sun:
+                    for i in current_body.orbiting:
+                        forces += gravity(current_body, i)
+                        
+                    force_list.append(forces)
+                else:
+                    force_list.append((0,0,0))
+                    
+            for i, current_body in enumerate(bodies):
+                if current_body.orbiting is not None and current_body is not Sun:
+                    current_body.force = force_list[i]
+                    current_body.momentum += current_body.force * dt
+                    current_body.pos += current_body.momentum / current_body.mass * dt
 
-    #zet de waardes van het stelsel in het plot
-    for i in bodies:
-        ax.plot(i.x_path[-100::], i.y_path[-100::], i.z_path[-100::], color=i.colour, zorder=3.9, alpha=0.5)
-        if i.colour is not None:
-            ax.scatter(i.pos[0], i.pos[1], i.pos[2], s=i.radius, color=i.colour, zorder=2)
-            ax.text(i.pos[0], i.pos[1], i.pos[2], s=i.name, zorder=10.,
-                    verticalalignment='center_baseline', horizontalalignment='center', fontsize=8)
+                    #past trails toe om de vorige posities te kunnen zien
+                    current_body.x_path = np.append(current_body.x_path, current_body.pos[0])
+                    current_body.y_path = np.append(current_body.y_path, current_body.pos[1])
+                    current_body.z_path = np.append(current_body.z_path, current_body.pos[2])
 
-        
+            t += dt
+        #stelt de grootte van het assenstelsel in
+        plt.cla()
+        ax.set_xlim(-4, 4)
+        ax.set_ylim(-4, 4)
+        ax.set_zlim(-4, 4)
+        ax.set_clip_on(False)
 
-    return scatter_plot
+        #zet de waardes van het stelsel in het plot
+        for i in bodies:
+            ax.plot(i.x_path[-100::], i.y_path[-100::], i.z_path[-100::], color=i.colour, zorder=3.9, alpha=0.5)
+            if i.colour is not None:
+                ax.scatter(i.pos[0], i.pos[1], i.pos[2], s=i.radius, color=i.colour, zorder=2)
+                ax.text(i.pos[0], i.pos[1], i.pos[2], s=i.name, zorder=10.,
+                        verticalalignment='center_baseline', horizontalalignment='center', fontsize=8)
+
+            
+
+        return scatter_plot
 
 
-animation = FuncAnimation(fig, func=sim, frames=100, interval=1)
+    animation = FuncAnimation(fig, func=sim, frames=100, interval=1)
+    plt.show()
