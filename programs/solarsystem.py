@@ -78,19 +78,18 @@ else:
 def solarsystem():
     #Hemellichamen als objecten van de CelestialBody class initialiseren
     #Hemellichamen als objecten van de CelestialBody class initialiseren
-    Sun = CelestialBody(            'Sun',      None, 400,     2000,    [0, 0, 0],      [0, 0, 0], colour='C1')
-    Mercury = CelestialBody(        'Mercury',  [Sun], 10,      4.5,    [0.5, 0, 0],    [0, -275, -30], colour='red')
-    Venus = CelestialBody(          'Venus',    [Sun], 75,     4.5,     [0.8, 0, 0],      [0, -200, 25], colour='blue')
-    Earth = CelestialBody(          'Earth',    [Sun], 100,     4.5,    [1.3, 0, 0],    [0, -165, 0], colour='C0')
-    Mars = CelestialBody(           'Mars',     [Sun], 100,     3.5,    [1.1, 0, 0],    [0, -150, 25], colour='red')
-    Jupiter = CelestialBody(        'Jupiter',  [Sun], 400,     5,      [1.7, 0, 0],    [0, -150, 30], colour='green')
-    Saturn = CelestialBody(         'Saturn',   [Sun], 200,     4.5,    [2.0, 0, 0],    [0, -130, 0], colour='yellow')
-    Uranus = CelestialBody(         'Uranus',   [Sun], 40,      4.7,    [2.2, 0, 0],    [0, -135, 0], colour='blue')
-    Neptune = CelestialBody(        'Neptune',  [Sun], 40,      4.6,    [2.4, 0, 0],    [0, -110, 0], colour='blue')
+    Sun = CelestialBody(            'Sun',      None, 200,       2000,      [0, 0, 0],      [0, 0, 0], colour='C1')
+    Mercury = CelestialBody(        'Mercury',  [Sun], 25,       4.5,       [0.5, 0, 0],    [0, -275, -30], colour='red')
+    Venus = CelestialBody(          'Venus',    [Sun], 37,       4.5,       [0.8, 0, 0],    [0, -220, 25], colour='blue')
+    Earth = CelestialBody(          'Earth',    [Sun], 50,       4.5,       [1.3, 0, 0],    [0, -165, 0], colour='C0')
+    Mars = CelestialBody(           'Mars',     [Sun], 50,       3.5,       [1.8, 0, 0],    [0, -105, 0], colour='red')
+    Jupiter = CelestialBody(        'Jupiter',  [Sun], 100,      5,         [3, 0, 0],      [0, -120, 30], colour='green')
+    Saturn = CelestialBody(         'Saturn',   [Sun], 100,      4.5,       [4, 0, 0],      [0, -100, 0], colour='#b88d00')
+    Uranus = CelestialBody(         'Uranus',   [Sun], 100,      4.7,       [5, 0, 0],      [0, -93, 0], colour='#0088ff')
+    Neptune = CelestialBody(        'Neptune',  [Sun], 100,      4.6,       [6, 0, 0],      [0, -83, 0], colour='#000096')
 
     #een list maken van de planeten
-    bodies = [Sun, Mercury, Venus, Earth, ]
-    #Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune
+    bodies = [Sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune]
 
     #stelt het plot in om 3d te tonen
     fig = plt.figure()
@@ -167,9 +166,9 @@ def solarsystem():
             t += dt
         #stelt de grootte van het assenstelsel in
         plt.cla()
-        ax.set_xlim(-4, 4)
-        ax.set_ylim(-4, 4)
-        ax.set_zlim(-4, 4)
+        ax.set_xlim(-8, 8)
+        ax.set_ylim(-8, 8)
+        ax.set_zlim(-8, 8)
         ax.set_clip_on(False)
 
         #zet de waardes van het stelsel in het plot
