@@ -42,37 +42,37 @@ def zodiac():
             if month == 12 and 22 <= day <= 31 or month==1 and 1 <= day <= 19:
                 sterrenbeeld = 'Steenbok'
 
-            if month == 1 and 20 <= day <= 31 or month==2 and 1 <= day <= 18:
+            elif month == 1 and 20 <= day <= 31 or month==2 and 1 <= day <= 18:
                 sterrenbeeld = 'Waterman'
 
-            if month == 2 and 19 <= day <= 31 or month==3 and 1 <= day <= 20:
+            elif month == 2 and 19 <= day <= 31 or month==3 and 1 <= day <= 20:
                 sterrenbeeld = 'Vissen'
             
-            if month == 3 and 21 <= day <= 31 or month==4 and 1 <= day <= 19:
+            elif month == 3 and 21 <= day <= 31 or month==4 and 1 <= day <= 19:
                 sterrenbeeld = 'Ram'
 
-            if month == 4 and 20 <= day <= 30 or month==5 and 1 <= day <= 20:
+            elif month == 4 and 20 <= day <= 30 or month==5 and 1 <= day <= 20:
                 sterrenbeeld = 'Stier'
 
-            if month == 5 and 21 <= day <= 31 or month==6 and 1 <= day <= 20:
+            elif month == 5 and 21 <= day <= 31 or month==6 and 1 <= day <= 20:
                 sterrenbeeld='Tweelingen'
 
-            if month == 6 and 21 <= day <= 30 or month==7 and 1 <= day <= 22:
+            elif month == 6 and 21 <= day <= 30 or month==7 and 1 <= day <= 22:
                 sterrenbeeld = 'Kreeft'
 
-            if month == 7 and 23 <= day <= 31 or month==8 and 1 <= day <= 22:
+            elif month == 7 and 23 <= day <= 31 or month==8 and 1 <= day <= 22:
                 sterrenbeeld = 'Leeuw'
 
-            if month == 8 and 23 <= day <= 30 or month==9 and 1 <= day <= 22:
+            elif month == 8 and 23 <= day <= 30 or month==9 and 1 <= day <= 22:
                 sterrenbeeld = 'Maagd'
 
-            if month == 9 and 23 <= day <= 31 or month==10 and 1 <= day <= 22:
+            elif month == 9 and 23 <= day <= 31 or month==10 and 1 <= day <= 22:
                 sterrenbeeld = 'Weegschaal'
 
-            if month == 10 and 23 <= day <= 30 or month==11 and 1 <= day <= 21:
+            elif month == 10 and 23 <= day <= 30 or month==11 and 1 <= day <= 21:
                 sterrenbeeld = 'Schorpioen'
 
-            if month == 11 and 22 <= day <= 31 or month==12 and 1 <= day <= 21:
+            elif month == 11 and 22 <= day <= 31 or month==12 and 1 <= day <= 21:
                 sterrenbeeld = 'Boogschutter'
 
             #print het sterrenbeeld dat bij de invoerdatum hoort      
