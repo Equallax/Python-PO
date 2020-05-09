@@ -45,25 +45,20 @@ def dummy_numeric(exclusive=False, input_text='Voer hier je waarde in: ', error=
 
     
     #als bij het callen van de functie exclusive op true is gezet returnt de functie een integer
-    if exclusive:
-        while True:
-            invoer = input(input_text+'\n')
-            try:
-                data=int(invoer)
-                if not negative_allowed and data<1: raise Exception()
-                break;
-            except:
-                print(error+'\n')
     #als bij het callen van de functie exclusive op false blijft returnt de functie een float, mits een integer niet kan
-    else:
-        while True:
-            invoer = input(input_text+'\n')
-            try:
-                data=float(invoer)
-                if not negative_allowed and data<1: raise Exception()
-                break;
-            except:
-                print(error+'\n')
+
+    while True:
+        invoer = input(input_text+'\n')
+        try:
+            if exclusive:  data=int(invoer)
+            else: data=float(invoer)
+
+            if not negative_allowed and data<1: raise Exception()
+            break;
+        except:
+            print(error+'\n')
+                
+    
     #returnt een gevalideerde als een string zodat nullen vooraan niet wegvallen, anders wordt bijvoorbeeld str(int('0010')) = '10'        
     if string_output:
         return invoer
