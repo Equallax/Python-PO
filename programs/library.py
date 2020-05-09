@@ -46,7 +46,6 @@ def dummy_numeric(exclusive=False, input_text='Voer hier je waarde in: ', error=
     
     #als bij het callen van de functie exclusive op true is gezet returnt de functie een integer
     #als bij het callen van de functie exclusive op false blijft returnt de functie een float, mits een integer niet kan
-
     while True:
         invoer = input(input_text+'\n')
         try:
