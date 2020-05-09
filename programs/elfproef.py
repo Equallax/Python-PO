@@ -29,33 +29,6 @@ def elfproef_check(BSN):
     return sum([y*z for y,z in zip([*range(9,1,-1)]+[-1], [int(x) for x in BSN])]) % 11 == 0
 
 
-def BSN_GEN(start_BSN):
-
-    ''' Deze functie neemt als invoer een BSN nummer. Hiermee kan daarna in een for-loop elke iteratie een nieuw BSN nummer als output gegeven.
-    
-    Voorbeeld:
-    
-    for i in BSN_GEN(100000001):
-    
-        if i < 100000005:
-            print(i)
-        else:
-            break
-    
-    OUTPUT:
-    
-    100000002
-    100000003
-    100000004
-  
-    '''
-    
-    current_BSN = start_BSN
-    while True:
-        current_BSN+=1
-        yield current_BSN
-
-
 def elfproef():
 
     ''' Dit is de hoofdfunctie van dit bestand. Het zorgt ervoor dat de gebruiker een BSN  kan laten checken.
@@ -78,7 +51,7 @@ def elfproef():
         
 
         #gaat vooruit op de invoer, checkt of deze geldig is en print het volgende geldige BSN
-        for test_BSN in BSN_GEN(int(input_BSN)):
+        for test_BSN in lib.number_gen(int(input_BSN),'add'):
         
             test_BSN_string = str(test_BSN)
             #voegt een 0 toe aan het begin van de BSN als deze 8 karakters lang is i.p.v. 9

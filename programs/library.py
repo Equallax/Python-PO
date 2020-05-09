@@ -109,3 +109,40 @@ def title_show(name):
      
     return show
         
+        
+        
+
+def number_gen(start_number, choice):
+
+    ''' Deze functie neemt als invoer een nummer. Hiermee kan daarna in een for-loop elke iteratie een nieuw nummer als output worden gegeven.
+    
+    Voorbeeld:
+    
+    for i in number_gen(100000001, 'add'):
+    
+        if i < 100000005:
+            print(i)
+        else:
+            break
+    
+    OUTPUT:
+    
+    100000002
+    100000003
+    100000004
+  
+    '''
+
+    current_number = start_number
+    
+    if choice == 'add':
+        while True:
+            current_number+=1
+            yield current_number
+            
+    elif choice == 'subtract':
+        while True:
+            current_number-=1
+            yield current_number
+    else:
+        Exception('No valid choice given')

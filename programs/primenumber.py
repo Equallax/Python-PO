@@ -21,6 +21,7 @@ def primenumber():
     '''
     
     title()
+    
  
     #checkt of een getal een priemgetal
     def PrimeCheck(input_number):
@@ -37,7 +38,6 @@ def primenumber():
                     prime = False
                     break
                     
-        
         return prime
     
     
@@ -50,25 +50,20 @@ def primenumber():
         print(f'{input_number} is geen priemgetal')
     
     #loopt terug vanaf de invoer om het vorige priemgetal te vinden door bij elke iteratie de verlaagde waarde door de PrimeCheck functie te laten gaan
-    temp = input_number
-    while True:
-        temp-=1
+    for temp in lib.number_gen(input_number,'subtract'):
         
         if temp<=0: 
             print(f'Er is geen priemgetal, kleiner dan {input_number}')
             break 
             
-        if temp==2 or PrimeCheck(temp):
+        if PrimeCheck(temp):
             print(f'{temp} is het vorige priemgetal')
             break
     
     #loopt verder vanaf de invoer om het volgende priemgetal te vinden door bij elke iteratie de verhoogde waarde door de PrimeCheck functie te laten gaan
-    temp = input_number
-    while True:
-        temp+=1
+    for temp in lib.number_gen(input_number,'add'):
         
-        if temp<=0: break 
-        if temp==2 or PrimeCheck(temp):
+        if PrimeCheck(temp):
             print(f'{temp} is het volgende priemgetal')
             break
         
