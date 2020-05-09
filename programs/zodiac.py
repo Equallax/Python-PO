@@ -17,7 +17,7 @@ def zodiac():
     
         1. Invoer van gebruiker halen als een list
         2. De list omzetten in losse invoerwaardes voor dag, maand en jaar
-        3. Checken bij welk sterrebeeld de invoer hoort
+        3. Checken bij welk sterrenbeeld de invoer hoort
         
     '''
     
@@ -27,12 +27,15 @@ def zodiac():
             try:
                 #neemt de invoer als een datum
                 day,month,year = [int(i) for i in input('Voer hier je geboortedatum in, in het formaat \'dd/mm/jj\' : \n').split('/')]
+                if year < 1582: raise Exception
                 break
-            except:
+            
+            except ValueError:
                 print('Dat is geen geldige datum')
-
-
-        isValidDate = True
+            
+            except:
+                 print('Het jaartal mag niet lager zijn dan 1582\n')
+                
         try :
             #haalt jaar, maand en dag uit elkaar om te kijken welk sterrenbeeld erbij hoort
             datetime.datetime(int(year),int(month),int(day))

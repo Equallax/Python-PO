@@ -116,6 +116,11 @@ def number_gen(start_number, choice):
 
     ''' Deze functie neemt als invoer een nummer. Hiermee kan daarna in een for-loop elke iteratie een nieuw nummer als output worden gegeven.
     
+    ARG BESCHRIJVING:
+        start_number:       Beginwaarde van de functie
+        choice:             Stelt in of de operator += of -= moet zijn
+        
+    
     Voorbeeld:
     
     for i in number_gen(100000001, 'add'):
