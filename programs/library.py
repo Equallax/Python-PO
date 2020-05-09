@@ -83,7 +83,7 @@ def length_check(input_function, desired_length , function_args=None):
                 return user_input
                 break;
             else:
-                print('De invoer moet bestaan uit {} cijfer, maar {} waren gegeven\n'.format(desired_length, len(str(user_input))))
+                print(f'De invoer moet bestaan uit {desired_length} cijfer, maar {len(str(user_input))} waren gegeven\n')
     
     
 
